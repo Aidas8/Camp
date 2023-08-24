@@ -3,7 +3,7 @@ from .models import Stovyklaviete, Privalumas
 
 def index(request):
     top_stovyklavietes = Stovyklaviete.objects.order_by('-reitingas')[:5]
-    return render(request, 'stovykla/index.html', {'top_stovyklavietes': top_stovyklavietes})
+    return render(request, 'stovyklavietes/index.html', {'top_stovyklavietes': top_stovyklavietes})
 
 def add_stovyklaviete(request):
     if request.method == 'POST':
@@ -15,10 +15,10 @@ def add_stovyklaviete(request):
         for privalumas in privalumai:
             Privalumas.objects.create(pavadinimas=privalumas, stovyklaviete=stovyklaviete)
 
-    return render(request, 'stovykla/add_stovyklaviete.html')
+    return render(request, 'stovyklavietes/add_stovyklaviete.html')
 
 def info(request):
-    return render(request, 'stovykla/info.html')
+    return render(request, 'stovyklavietes/info.html')
 
 def about(request):
-    return render(request, 'stovykla/about.html')
+    return render(request, 'stovyklavietes/about.html')
