@@ -1,0 +1,34 @@
+{% extends 'stovyklavietes_projektas/base.html' %}
+
+{% block content %}
+<h2>Pridėti stovyklavietę</h2>
+<form method="post">
+  {% csrf_token %}
+  <label for="pavadinimas">Pavadinimas:</label>
+  <input type="text" name="pavadinimas" required><br>
+  <label for="reitingas">Reitingas:</label>
+  <input type="number" name="reitingas" required><br>
+  
+  <label>Privalumai:</label><br>
+  <input type="checkbox" name="privalumai" value="Ezeras"> Ezeras<br>
+  <input type="checkbox" name="privalumai" value="Upe"> Upe<br>
+  <input type="checkbox" name="privalumai" value="Miskas"> Miskas<br>
+  <input type="checkbox" name="privalumai" value="Pavesine"> Pavesinė<br>
+  <input type="checkbox" name="privalumai" value="stalas"> Stalas<br>
+  <input type="checkbox" name="privalumai" value="Auto stovejimo vieta"> Auto stovėjimo vieta<br>
+  <input type="checkbox" name="privalumai" value="Laužavietė"> Laužavietė<br>
+  <input type="checkbox" name="privalumai" value="Lieptas"> Lieptas<br>
+  <input type="checkbox" name="privalumai" value="WC"> WC<br>
+  
+  <label for="koordinates">Koordinatės:</label>
+  <input type="text" name="koordinates" required><br>
+  
+  <label for="nuotrauka">Stovyklavietės nuotrauka:</label>
+  <input type="file" name="nuotrauka"><br>
+  
+  <label for="papildoma_info">Papildoma informacija:</label><br>
+  <textarea name="papildoma_info" rows="4" cols="50"></textarea><br>
+  
+  <button type="submit">Pridėti</button>
+</form>
+{% endblock %}
