@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>Stovyklavimo Projektas</title>
+    <style>
+        /* CSS stiliai kaip anksčiau */
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Pradžia</a></li>
+            <li><a href="{% url 'add_stovyklaviete' %}">Pridėti stovyklavietę</a></li>
+            <li><a href="{% url 'info' %}">Informacija</a></li>
+            <li><a href="{% url 'about' %}">Apie mus</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        {% block content %}
+        <h1>Informacija apie stovyklavimą</h1>
+        <h2>Kas daugiau nei informacija</h2>
+        <p>Nepamirškite paimti savo kompaso ir žemėlapio, kad lengviau susiorientuotumėte gamtoje.</p>
+        <h2>Pirmausia stovyklavime</h2>
+        <p>Kai atvyksite į stovyklavietę, pasirūpinkite iškrovimo ir stovyklavimo įrankiais. Taip pat galite pasidomėti, ar reikia užsiregistruoti ar laikytis kitų procedūrų.</p>
+        <h2>Saugumas visada pirmas</h2>
+        <p>Nepamirškite laikytis saugumo taisyklių stovyklavime. Kiekvieną kartą prieš išvykdami patikrinkite savo inventorių ir pasirūpinkite, kad būtumėte pasiruošę visiems galimiems iššūkiams.</p>
+        {% endblock %}
+    </div>
+    <div id="footer">
+        &copy; {{ year }} Stovyklavimo Projektas
+    </div>
+</body>
+</html>

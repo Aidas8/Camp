@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 
+<nav>
+    <ul>
+        <li><a href="{% url 'index' %}">Pradžia</a></li>
+        <li><a href="{% url 'add_stovyklaviete' %}">Pridėti stovyklavietę</a></li>
+        <li><a href="{% url 'info' %}">Informacija</a></li>
+        <li><a href="{% url 'about' %}">Apie mus</a></li>
+    </ul>
+</nav>
+
+
 {% block content %}
 <h1>Sveiki atvykę į stovyklavių puslapį!</h1>
+<p>Čia rasite informaciją apie skirtingas stovyklavių vietas.</p>
 <ul>
   {% for stovyklaviete in stovyklavietes %}
     <li>{{ stovyklaviete.pavadinimas }} - {{ stovyklaviete.vieta }}</li>
