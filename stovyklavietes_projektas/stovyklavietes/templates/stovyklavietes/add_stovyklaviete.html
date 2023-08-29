@@ -2,14 +2,14 @@
 
 {% block content %}
 <h2>Pridėti stovyklavietę</h2>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <label for="pavadinimas">Pavadinimas:</label>
   <input type="text" name="pavadinimas" required><br>
   <label for="reitingas">Reitingas:</label>
   <input type="number" name="reitingas" required><br>
-  
-  <label>Privalumai:</label><br>
+
+ <label>Privalumai:</label><br>
   <input type="checkbox" name="privalumai" value="Ezeras"> Ezeras<br>
   <input type="checkbox" name="privalumai" value="Upe"> Upe<br>
   <input type="checkbox" name="privalumai" value="Miskas"> Miskas<br>
