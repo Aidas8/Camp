@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Stovyklaviete, Privalumas
 
+def index(request):
+    stovyklavietes = Stovyklaviete.objects.all()
+    return render(request, 'stovyklavietes/pagrindinis.html', {'stovyklavietes': stovyklavietes})
+
 def add_stovyklaviete(request):
     if request.method == 'POST':
         pavadinimas = request.POST['pavadinimas']
@@ -15,6 +19,12 @@ def add_stovyklaviete(request):
         for privalumas in privalumai:
             Privalumas.objects.create(pavadinimas=privalumas, stovyklaviete=stovyklaviete)
 
-        return redirect('index')
+        return redirect('pagrindinis')
 
     return render(request, 'stovyklavietes/add_stovyklaviete.html')
+
+def info(request):
+    return render(request, 'stovyklavietes/info.html')
+
+def about(request):
+    return render(request, 'stovyklavietes/about.html')
