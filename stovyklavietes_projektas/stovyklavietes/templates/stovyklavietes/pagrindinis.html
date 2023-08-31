@@ -9,13 +9,12 @@
     </ul>
 </nav>
 
-
 {% block content %}
 <h1>Sveiki atvykę į stovyklavių puslapį!</h1>
 <p>Čia rasite informaciją apie skirtingas stovyklavių vietas.</p>
 <ul>
   {% for stovyklaviete in stovyklavietes %}
-    <li>{{ stovyklaviete.pavadinimas }} - {{ stovyklaviete.vieta }}</li>
+    <li>{{ stovyklaviete.pavadinimas }} - {{ stovyklaviete.vieta }} - {{ stovyklaviete.koordinates }} - {{ stovyklaviete.papildoma_info }}</li>
   {% endfor %}
 </ul>
 {% endblock %}
