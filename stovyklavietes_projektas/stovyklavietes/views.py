@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Stovyklaviete, Privalumas
 
-def index(request):
+def pagrindinis(request):
     stovyklavietes = Stovyklaviete.objects.all()
     return render(request, 'stovyklavietes/pagrindinis.html', {'stovyklavietes': stovyklavietes})
 

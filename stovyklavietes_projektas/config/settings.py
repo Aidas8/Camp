@@ -43,12 +43,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'stovyklavietes_projektas.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'stovyklavietes_projektas', 'templates')],    #cia pakeiciau stovyklavietes_projektas ---> stoyklavietes
+        'DIRS': [os.path.join(BASE_DIR, 'config', 'templates')],    #cia pakeiciau stovyklavietes_projektas ---> stoyklavietes ---> config
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -62,12 +62,12 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'stovyklavietes_projektas.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -105,7 +105,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

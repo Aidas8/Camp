@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'stovyklavietes_projektas.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')   #pakeiciau stovyklavietes_projektas ---> config
 
 application = get_asgi_application()
