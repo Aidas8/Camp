@@ -12,9 +12,19 @@
 {% block content %}
 <h1>Sveiki atvykę į stovyklavių puslapį!</h1>
 <p>Čia rasite informaciją apie skirtingas stovyklavių vietas.</p>
-<ul>
-  {% for stovyklaviete in stovyklavietes %}
-    <li>{{ stovyklaviete.pavadinimas }} - {{ stovyklaviete.vieta }} - {{ stovyklaviete.koordinates }} - {{ stovyklaviete.papildoma_info }}</li>
-  {% endfor %}
-</ul>
+{% for stovyklaviete in stovyklavietes %}
+  <div class="stovyklaviete">
+    <h2>{{ stovyklaviete.pavadinimas }}</h2>
+    <p>Vieta: {{ stovyklaviete.vieta }}</p>
+    <p>Koordinatės: {{ stovyklaviete.koordinates }}</p>
+    <p>Papildoma informacija: {{ stovyklaviete.papildoma_info }}</p>
+    <p>Regionas: {{ stovyklaviete.regionas }}</p>
+    <h3>Privalumai:</h3>
+    <ul>
+      {% for privalumas in stovyklaviete.privalumas_set.all %}
+        <li>{{ privalumas.pavadinimas }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
 {% endblock %}

@@ -6,17 +6,28 @@
   {% csrf_token %}
   <label for="pavadinimas">Pavadinimas:</label>
   <input type="text" name="pavadinimas" required><br>
-  <label for="reitingas">Reitingas:</label>
-  <input type="number" name="reitingas" required><br>
+  <label for="reitingas">Reitingas (nuo 1 iki 10):</label>
+  <input type="number" name="reitingas" min="1" max="10" required><br>
+  <label for="vieta">Vieta:</label>
+  <input type="text" name="vieta"><br>
 
- <label>Privalumai:</label><br>
+  <label for="regionas">Regionas:</label>
+  <select name="regionas" id="regionas">
+    <option value="Rinkis">Rinkis</option>
+    <option value="Aukstaitija">Aukštaitija</option>
+    <option value="Dzukija">Dzūkija</option>
+    <option value="Suvalkija">Suvalkija</option>
+    <option value="Zemaitija">Žemaitija</option>
+  </select><br>
+
+  <label>Privalumai:</label><br>
   <input type="checkbox" name="privalumai" value="Ezeras"> Ezeras<br>
   <input type="checkbox" name="privalumai" value="Upe"> Upe<br>
   <input type="checkbox" name="privalumai" value="Miskas"> Miskas<br>
   <input type="checkbox" name="privalumai" value="Pavesine"> Pavesinė<br>
-  <input type="checkbox" name="privalumai" value="stalas"> Stalas<br>
+  <input type="checkbox" name="privalumai" value="Stalas"> Stalas<br>
   <input type="checkbox" name="privalumai" value="Auto stovejimo vieta"> Auto stovėjimo vieta<br>
-  <input type="checkbox" name="privalumai" value="Laužavietė"> Laužavietė<br>
+  <input type="checkbox" name="privalumai" value="Lauzaviete"> Laužavietė<br>
   <input type="checkbox" name="privalumai" value="Lieptas"> Lieptas<br>
   <input type="checkbox" name="privalumai" value="WC"> WC<br>
 
