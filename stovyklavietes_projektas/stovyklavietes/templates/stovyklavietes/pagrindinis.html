@@ -10,8 +10,15 @@
 </nav>
 
 {% block content %}
-<h1>Sveiki atvykę į stovyklavių puslapį!</h1>
-<p>Čia rasite informaciją apie skirtingas stovyklavių vietas.</p>
+<h1>Sveiki atvykę į stovyklaviečių puslapį!</h1>
+<p>Čia rasite informaciją apie skirtingas stovyklavietes visoje Lietuvoje.</p>
+
+
+<form method="get" action="{% url 'search_stovyklavietes' %}">
+  <input type="text" name="q" placeholder="Paieška...">
+  <button type="submit">Ieškoti</button>
+</form>
+
 {% for stovyklaviete in stovyklavietes %}
   <div class="stovyklaviete">
     <h2>{{ stovyklaviete.pavadinimas }}</h2>

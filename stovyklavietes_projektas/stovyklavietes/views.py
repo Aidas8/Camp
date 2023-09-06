@@ -38,3 +38,8 @@ def info(request):
 
 def about(request):
     return render(request, 'stovyklavietes/about.html')
+
+def search_stovyklavietes(request):
+    query = request.GET.get('query')
+    stovyklavietes = Stovyklaviete.objects.filter(pavadinimas__icontains=query)
+    return render(request, 'stovyklavietes/search_results.html', {'stovyklavietes': stovyklavietes})

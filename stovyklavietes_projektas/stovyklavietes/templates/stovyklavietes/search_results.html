@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Paieškos rezultatai</h1>
+
+{% if stovyklavietes %}
+  <ul>
+    {% for stovyklaviete in stovyklavietes %}
+      <li>{{ stovyklaviete.pavadinimas }} - {{ stovyklaviete.vieta }} - {{ stovyklaviete.koordinates }} - {{ stovyklaviete.papildoma_info }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Nieko nerasta.</p>
+{% endif %}
+{% endblock %}
